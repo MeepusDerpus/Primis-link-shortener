@@ -2,9 +2,7 @@
 
 Welcome to my attempt at the link shortening exercise for Primis by Mansoor Rahman
 
-# Project/Docs walkthough:
-// TODO: fill in etc
+# To Use
 
-
-# How To Run: 
-// TODO: fill in etc
+- npm install
+- npm start 
