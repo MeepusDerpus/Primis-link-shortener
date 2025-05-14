@@ -1,6 +1,6 @@
 # Primis-link-shortener
 
-Lorem ipsum dolor I will add more detailed readme instructions later
+Welcome to my attempt at the link shortening exercise for Primis by Mansoor Rahman
 
 # To Use
 
