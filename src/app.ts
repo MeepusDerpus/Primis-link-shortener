@@ -34,12 +34,11 @@ app.get('/', (req, res) => {
 /**
  * Parses HTML and replaces URLs with tokenized tracking URLs.
  * @route POST /parse
- * @body { html: string }
+ * @body Raw HTML string
  * @returns {string} Modified HTML with tokenized URLs
  */
-app.post('/parse', (req, res) => {
-    //note this doesnt handle newlines and html tags well, work on making it more robust
-    const { html } = req.body;
+app.post('/parse', express.text() , (req, res) => {
+    const html = req.body;
     const parsedHtml = parseHtml(html, urlService);
     console.log('Parsed HTML:', parsedHtml);
     res.send(parsedHtml);
