@@ -23,4 +23,9 @@ Hence I felt there was a lot of  where I tried to fill in the gaps from my curre
 - Existing Architecture (Vendors, Microservices, EDA, monolith etc)
 - Business/Product constraints, requirements. 
 - DevOps integration (CICD, DBs, Cloud Platforms)
-- I'd like to be a lot more thorough in testing (unit tests, integration tests, load tests) but time constraints are tight
+- I'd like to be a lot more thorough in testing (unit tests, integration tests, load tests) but time constraints are tight, I've had some personal life admin 
+
+PS Pls check my Merge requests:
+- [Design documentation planning](https://github.com/MeepusDerpus/Primis-link-shortener/pull/1)
+- [Code implementation](https://github.com/MeepusDerpus/Primis-link-shortener/pull/2)
+- [QA & Improvements](https://github.com/MeepusDerpus/Primis-link-shortener/pull/3)
