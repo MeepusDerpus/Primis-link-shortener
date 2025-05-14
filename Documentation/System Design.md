@@ -30,8 +30,9 @@ The system is split into two main components
 
 ## High-Level Architecture
 
-
 This section provides an overview of the main components and their interactions.
+
+![alt text](image-1.png)
 
 - System Overview: 
   -  The Link Clicks Tracking system is designed to track user interactions with URLs embedded in HTML content. 
