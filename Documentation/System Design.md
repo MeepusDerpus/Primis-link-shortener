@@ -24,17 +24,21 @@ The system is split into two main components
 - Scalability: The URL Tracking Service needs to handle 1000s of clicks daily/hourly, it may scale to 1 or 0 in quiet hours. (Do double check figures with product/business team)
 - High Availability: The system must be highly available i.e. have minimal downtime when users click links. 
 - Fault Tolerance: The overall System must remain available even if individual compoents fail. 
-- High throughput, low latency: The System must respond to large amounts of requests speedily with a low 
+- High throughput, low latency: The System must respond to large amounts of requests speedily with low latency
 - Observability, Monitoring, Metrics: The System must provide good visibility into health/uptime, performance & the lifecycle of requests serviced by various workflows & their components.      
 
 
 ## High-Level Architecture
 
-// TODO: Diagrams
 
 This section provides an overview of the main components and their interactions.
 
 - System Overview: 
+  -  The Link Clicks Tracking system is designed to track user interactions with URLs embedded in HTML content. 
+  - The system consists of two main services: the HTML Processor and the URL Shortening & Tracking Service. 
+  - The HTML Parser identifies URLs in raw HTML & replaces them with unique shortened tracking URLs, returning the modified HTML. 
+  - The URL Shortening & Tracking Service generates these shortened URLs/Tokens, logs visits and redirects users to the original destination URL. 
+  - Analytics metadata is collected and stored for reporting and analytic purposes.
 
 - Component Identification:
   - HTML Parser: A relatively independent service or package, Parses HTML input, returning the same HTML with updated tokenized short links. 
@@ -86,9 +90,10 @@ Based on the following criteria:
 - Data Relationships: There are no strict relational requirements or complex data relationships.
 - Flexible Analytics Requirements: Analytics data stored by visits to the URLs are unclear, quite likely would change in future and grow to accomodate new functionality.
 
-In my opinion it would be best to use a NoSQL Database such as DynamoDB, MongoDB etc for tracking visits & Analytics data. 
+In my opinion it would be best to use a NoSQL Database such as DynamoDB, MongoDB etc for tracking visits & Analytics data. \
+At the expense of additional work, one may store URL/Token pairs in Redis separately from Dynamo for extreme speed. Albeit Dynamo with DAX caching for example may be suitably fast in retreiving long URLs too. 
 
-At the expense of additional work, one may store URL/Token pairs in Redis for extreme speed. Albeit Dynamo with DAX caching for example may be suitably fast in retreiving long URLs too. 
+Long Term/Beyond the scope of this spec is analytics, we may implement an ETL pipeline to long term/big data tools such as redshift/looker etc. 
 
 ---
 
