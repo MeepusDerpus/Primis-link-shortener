@@ -8,9 +8,6 @@
 
 import UrlService from "./urlService";
 
-
-const urlMap: Map<string, string> = new Map();
-
 /**
  * Parses raw HTML and replaces URLs with tokenized tracking URLs.
  * @param rawHtml - The raw HTML string to be parsed

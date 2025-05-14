@@ -55,13 +55,13 @@ This section provides an overview of the main components and their interactions.
 ## Detailed Design
 
 ### HTML Parsing Service
-- Functionality
-- DS
-- Algorithms
+- Functionality: Standalone function that accepts rawHTML from the endpoint & urlService instance (could be a candidate for a singleton)
+- DS : None, excluding the passed instance, nothing is required outside the scope of the function
+- Algorithms: Simple regex match for URLs, followed by a loop to replace URLs with their tokenized counterpart. A library such as cheerio for HTML parsing may be an improvement
 
 ### URL Shortening & Tracking Service
-- Functionality
-- DS
+- Functionality: Generates token URLs & Fetches their corresponding long URLs, logs analytics visits too
+- DS: Uses an internal Map, this would be a DB or cache store in production
 - Endpoints/Functions (OpenAPI/Swagger would be nice here)
 - Logic (redirection, logging)
 
