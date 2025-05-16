@@ -18,7 +18,7 @@ export function parseHtml(rawHtml: string, urlService: UrlService ): string {
     console.log('Parsing raw HTML:', rawHtml, '\n');
     
     // I've decided to use a regex to find URLs in the HTML & iterate over them
-    const urlRegex = /(https?:\/\/[^"]+)/g;
+    const urlRegex = /https?:\/\/[^\s"'<>]+/g;
     let tokenizedHtml = rawHtml;
 
     const urls = rawHtml.match(urlRegex);
